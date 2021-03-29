@@ -1,0 +1,22 @@
+{
+  "name": "evolutioncms/EvocmsQueue",
+  "require": {
+    "illuminate/queue": "8.*",
+    "illuminate/encryption": "8.*",
+    "illuminate/bus": "8.*"
+  },
+  "autoload": {
+    "psr-4": {
+      "EvolutionCMS\\EvocmsQueue\\": "src"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "EvolutionCMS\\EvocmsQueue\\EvocmsQueueServiceProvider",
+        "Illuminate\\Queue\\QueueServiceProvider"
+      ]
+
+    }
+  }
+}
