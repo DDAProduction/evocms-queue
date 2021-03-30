@@ -1,5 +1,5 @@
 {
-  "name": "evolutioncms/EvocmsQueue",
+  "name": "ddaproduction/evocms-queue",
   "require": {
     "illuminate/queue": "8.*",
     "illuminate/encryption": "8.*",
