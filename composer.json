@@ -1,5 +1,6 @@
 {
   "name": "ddaproduction/evocms-queue",
+  "license": "MIT",
   "require": {
     "illuminate/queue": "8.*",
     "illuminate/encryption": "8.*",

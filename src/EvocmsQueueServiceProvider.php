@@ -3,6 +3,7 @@
 namespace EvolutionCMS\EvocmsQueue;
 
 use EvolutionCMS\ServiceProvider;
+use Illuminate\Contracts\Debug\ExceptionHandler as ExceptionHandlerContract;
 use Illuminate\Queue\Console\BatchesTableCommand;
 use Illuminate\Queue\Console\ClearCommand as QueueClearCommand;
 use Illuminate\Queue\Console\FailedTableCommand;
@@ -55,6 +56,9 @@ class EvocmsQueueServiceProvider extends ServiceProvider
 
         $this->registerCommands($commands);
 
+        if($this->app->runningInConsole() && !$this->app->runningUnitTests()){
+            $this->app->alias(\EvolutionCMS\EvocmsQueue\ExceptionHandler::class, ExceptionHandlerContract::class);
+        }
 
         $this->app->bind('cache.store', function ($app) {
             return $app->make(\Illuminate\Cache\Repository::class);
